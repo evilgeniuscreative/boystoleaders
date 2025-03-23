@@ -1,0 +1,249 @@
+{
+  "avatars": [
+    {
+      "id": 1,
+      "name": "Alex",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Alex&backgroundColor=b6e3f4&skinColor=f2d3b1&hairColor=2c1b18"
+    },
+    {
+      "id": 2,
+      "name": "Miguel",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Miguel&backgroundColor=d1d4f9&skinColor=ac6651&hairColor=724133"
+    },
+    {
+      "id": 3,
+      "name": "Jamal",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Jamal&backgroundColor=ffd5dc&skinColor=614335&hairColor=090806"
+    },
+    {
+      "id": 4,
+      "name": "Connor",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Connor&backgroundColor=c0aede&skinColor=edb98a&hairColor=a55728"
+    },
+    {
+      "id": 5,
+      "name": "Tyrone",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Tyrone&backgroundColor=ffdfbf&skinColor=4a312c&hairColor=2c1b18"
+    },
+    {
+      "id": 6,
+      "name": "Wei",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Wei&backgroundColor=d1d4f9&skinColor=f8d25c&hairColor=090806"
+    },
+    {
+      "id": 7,
+      "name": "Raj",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Raj&backgroundColor=c0aede&skinColor=d08b5b&hairColor=2c1b18"
+    },
+    {
+      "id": 8,
+      "name": "Mateo",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Mateo&backgroundColor=b6e3f4&skinColor=ae5d29&hairColor=724133"
+    },
+    {
+      "id": 9,
+      "name": "Jackson",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Jackson&backgroundColor=ffd5dc&skinColor=edb98a&hairColor=a55728"
+    },
+    {
+      "id": 10,
+      "name": "Isaiah",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Isaiah&backgroundColor=ffdfbf&skinColor=6b4139&hairColor=090806"
+    },
+    {
+      "id": 11,
+      "name": "Liam",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Liam&backgroundColor=b6e3f4&skinColor=ecad80&hairColor=e0c797"
+    },
+    {
+      "id": 12,
+      "name": "Noah",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Noah&backgroundColor=d1d4f9&skinColor=f2d3b1&hairColor=d6b370"
+    },
+    {
+      "id": 13,
+      "name": "Aiden",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Aiden&backgroundColor=c0aede&skinColor=ac6651&hairColor=2c1b18"
+    },
+    {
+      "id": 14,
+      "name": "Mohamed",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Mohamed&backgroundColor=ffd5dc&skinColor=614335&hairColor=4a312c"
+    },
+    {
+      "id": 15,
+      "name": "Ethan",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Ethan&backgroundColor=ffdfbf&skinColor=f8d25c&hairColor=724133"
+    },
+    {
+      "id": 16,
+      "name": "Kwame",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Kwame&backgroundColor=b6e3f4&skinColor=4a312c&hairColor=090806"
+    },
+    {
+      "id": 17,
+      "name": "Dylan",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Dylan&backgroundColor=d1d4f9&skinColor=edb98a&hairColor=a55728"
+    },
+    {
+      "id": 18,
+      "name": "Carlos",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Carlos&backgroundColor=c0aede&skinColor=d08b5b&hairColor=4a312c"
+    },
+    {
+      "id": 19,
+      "name": "Jason",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Jason&backgroundColor=ffd5dc&skinColor=f8d25c&hairColor=d6b370"
+    },
+    {
+      "id": 20,
+      "name": "David",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=David&backgroundColor=ffdfbf&skinColor=ae5d29&hairColor=2c1b18"
+    },
+    {
+      "id": 21,
+      "name": "Omar",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Omar&backgroundColor=b6e3f4&skinColor=6b4139&hairColor=d6b370"
+    },
+    {
+      "id": 22,
+      "name": "Ji-hun",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Ji-hun&backgroundColor=d1d4f9&skinColor=f2d3b1&hairColor=090806"
+    },
+    {
+      "id": 23,
+      "name": "Alejandro",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Alejandro&backgroundColor=c0aede&skinColor=ac6651&hairColor=a55728"
+    },
+    {
+      "id": 24,
+      "name": "Malik",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Malik&backgroundColor=ffd5dc&skinColor=4a312c&hairColor=b58143"
+    },
+    {
+      "id": 25,
+      "name": "Ezra",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Ezra&backgroundColor=ffdfbf&skinColor=edb98a&hairColor=724133"
+    },
+    {
+      "id": 26,
+      "name": "Takeshi",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Takeshi&backgroundColor=b6e3f4&skinColor=f8d25c&hairColor=090806"
+    },
+    {
+      "id": 27,
+      "name": "Xavier",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Xavier&backgroundColor=d1d4f9&skinColor=6b4139&hairColor=a55728"
+    },
+    {
+      "id": 28,
+      "name": "Nasir",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Nasir&backgroundColor=c0aede&skinColor=d08b5b&hairColor=4a312c"
+    },
+    {
+      "id": 29,
+      "name": "Andre",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Andre&backgroundColor=ffd5dc&skinColor=614335&hairColor=d6b370"
+    },
+    {
+      "id": 30,
+      "name": "Elijah",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Elijah&backgroundColor=ffdfbf&skinColor=f2d3b1&hairColor=724133"
+    },
+    {
+      "id": 31,
+      "name": "Lucas",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Lucas&backgroundColor=b6e3f4&skinColor=ac6651&hairColor=090806"
+    },
+    {
+      "id": 32,
+      "name": "Darius",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Darius&backgroundColor=d1d4f9&skinColor=4a312c&hairColor=a55728"
+    },
+    {
+      "id": 33,
+      "name": "Juan",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Juan&backgroundColor=c0aede&skinColor=edb98a&hairColor=b58143"
+    },
+    {
+      "id": 34,
+      "name": "Hiro",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Hiro&backgroundColor=ffd5dc&skinColor=f8d25c&hairColor=090806"
+    },
+    {
+      "id": 35,
+      "name": "Jordan",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Jordan&backgroundColor=ffdfbf&skinColor=d08b5b&hairColor=d6b370"
+    },
+    {
+      "id": 36,
+      "name": "Benjamin",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Benjamin&backgroundColor=b6e3f4&skinColor=614335&hairColor=724133"
+    },
+    {
+      "id": 37,
+      "name": "Theo",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Theo&backgroundColor=d1d4f9&skinColor=ae5d29&hairColor=090806"
+    },
+    {
+      "id": 38,
+      "name": "Rahul",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Rahul&backgroundColor=c0aede&skinColor=6b4139&hairColor=4a312c"
+    },
+    {
+      "id": 39,
+      "name": "Marcus",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Marcus&backgroundColor=ffd5dc&skinColor=4a312c&hairColor=a55728"
+    },
+    {
+      "id": 40,
+      "name": "Leo",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Leo&backgroundColor=ffdfbf&skinColor=f2d3b1&hairColor=b58143"
+    },
+    {
+      "id": 41,
+      "name": "Ahmed",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Ahmed&backgroundColor=b6e3f4&skinColor=ac6651&hairColor=724133"
+    },
+    {
+      "id": 42,
+      "name": "Samuel",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Samuel&backgroundColor=d1d4f9&skinColor=614335&hairColor=090806"
+    },
+    {
+      "id": 43,
+      "name": "Luis",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Luis&backgroundColor=c0aede&skinColor=f8d25c&hairColor=a55728"
+    },
+    {
+      "id": 44,
+      "name": "Daniel",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Daniel&backgroundColor=ffd5dc&skinColor=d08b5b&hairColor=d6b370"
+    },
+    {
+      "id": 45,
+      "name": "Mason",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Mason&backgroundColor=ffdfbf&skinColor=6b4139&hairColor=b58143"
+    },
+    {
+      "id": 46,
+      "name": "Jin",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Jin&backgroundColor=b6e3f4&skinColor=f8d25c&hairColor=090806"
+    },
+    {
+      "id": 47,
+      "name": "Anthony",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Anthony&backgroundColor=d1d4f9&skinColor=edb98a&hairColor=724133"
+    },
+    {
+      "id": 48,
+      "name": "Michael",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Michael&backgroundColor=c0aede&skinColor=f2d3b1&hairColor=4a312c"
+    },
+    {
+      "id": 49,
+      "name": "Santiago",
+      "url": "https://api.dicebear.com/7.x/avataaars/svg?seed=Santiago&backgroundColor=ffd5dc&skinColor=ac6651&hairColor=a55728"
+    }
+  ]
+}

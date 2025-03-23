@@ -1,0 +1,44 @@
+
+// dashboard.scss
+.dashboard-container {
+    @include flex(column, flex-start, stretch);
+    gap: map-get($spacing, xl);
+    padding: map-get($spacing, lg);
+    
+    @include respond-to(md) {
+      padding: map-get($spacing, xl);
+    }
+    
+    .dashboard-welcome {
+      @include flex(column, center, flex-start);
+      
+      h1 {
+        font-family: map-get($fonts, heading);
+        font-weight: map-get($font-weights, bold);
+        font-size: map-get($font-sizes, xxl);
+        color: map-get(map-get($colors, gray), 900);
+        margin-bottom: map-get($spacing, xs);
+      }
+      
+      .level-indicator {
+        font-family: map-get($fonts, accent);
+        font-weight: map-get($font-weights, medium);
+        color: map-get(map-get($colors, primary), base);
+        font-size: map-get($font-sizes, md);
+        padding: map-get($spacing, xs) map-get($spacing, md);
+        background-color: rgba(map-get(map-get($colors, primary), base), 0.1);
+        border-radius: map-get($border-radius, pill);
+      }
+    }
+    
+    .dashboard-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: map-get($spacing, lg);
+      
+      @include respond-to(lg) {
+        grid-template-columns: 3fr 1fr;
+      }
+    }
+  }
+  

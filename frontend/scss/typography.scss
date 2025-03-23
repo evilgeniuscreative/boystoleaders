@@ -1,0 +1,26 @@
+// Typography
+$fonts: (
+  heading: ('Montserrat', sans-serif),
+  body: ('Open Sans', sans-serif),
+  accent: ('Poppins', sans-serif),
+);
+
+$font-sizes: (
+  xs: 0.75rem,   // 12px
+  sm: 0.875rem,  // 14px
+  base: 1rem,    // 16px
+  md: 1.125rem,  // 18px
+  lg: 1.25rem,   // 20px
+  xl: 1.5rem,    // 24px
+  xxl: 1.875rem, // 30px
+  xxxl: 2.25rem, // 36px
+  hero: 3rem,    // 48px
+);
+
+$font-weights: (
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700,
+);

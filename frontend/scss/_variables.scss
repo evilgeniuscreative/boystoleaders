@@ -1,0 +1,103 @@
+// _variables.scss - Core design system variables
+
+// Color System
+$colors: (
+  // Primary brand colors
+  primary: (
+    base: #2465e9,
+    light: #4a85ff,
+    dark: #1a4ba8,
+  ),
+  // Secondary accent colors
+  secondary: (
+    base: #33c16f,
+    light: #5bd991,
+    dark: #259a53,
+  ),
+  // Supporting accent colors
+  accent: (
+    orange: #ff7b29,
+    purple: #8864f0,
+    teal: #29b6c5,
+    yellow: #ffcb45,
+  ),
+  // Grays for text and UI elements
+  gray: (
+    100: #f7f9fc,
+    200: #e9ecf2,
+    300: #d0d6e1,
+    400: #a0a8b9,
+    500: #6e7689,
+    600: #4d5362,
+    700: #363c4a,
+    800: #1f242f,
+    900: #121722,
+  ),
+  // Functional colors
+  feedback: (
+    success: #2bb67b,
+    warning: #ffc555,
+    error: #e94444,
+    info: #3b93f7,
+  ),
+);
+
+
+
+// Animation keyframes
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+// Animation utility classes
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+// Staggered animation for lists
+.staggered-item {
+  opacity: 0;
+  
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      animation: slideUp 0.5s ease-out forwards;
+      animation-delay: $i * 0.1s;
+    }
+  }
+}

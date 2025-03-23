@@ -1,0 +1,35 @@
+
+// cards.scss
+.card {
+    @include card(md, md, md);
+    transition: transform map-get($transitions, base);
+    
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: map-get($shadows, lg);
+    }
+    
+    .card-header {
+      margin-bottom: map-get($spacing, md);
+      
+      h3 {
+        font-family: map-get($fonts, heading);
+        font-weight: map-get($font-weights, semibold);
+        color: map-get(map-get($colors, gray), 800);
+        margin-bottom: map-get($spacing, xs);
+      }
+    }
+    
+    &.challenge-card {
+      border-left: 4px solid map-get(map-get($colors, accent), purple);
+    }
+    
+    &.achievement-card {
+      border-left: 4px solid map-get(map-get($colors, accent), orange);
+    }
+    
+    &.mentorship-card {
+      border-left: 4px solid map-get(map-get($colors, accent), teal);
+    }
+  }
+  

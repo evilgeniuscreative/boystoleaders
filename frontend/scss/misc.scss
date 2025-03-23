@@ -1,0 +1,55 @@
+// Spacing
+$spacing: (
+  xs: 0.25rem,  // 4px
+  sm: 0.5rem,   // 8px
+  md: 1rem,     // 16px
+  lg: 1.5rem,   // 24px
+  xl: 2rem,     // 32px
+  xxl: 3rem,    // 48px
+  xxxl: 4rem,   // 64px
+);
+
+// Responsive breakpoints
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1400px,
+);
+
+// Animation
+$transitions: (
+  fast: 150ms ease-in-out,
+  base: 250ms ease-in-out,
+  slow: 350ms ease-in-out,
+);
+
+// Borders
+$border-radius: (
+  sm: 0.25rem,   // 4px
+  md: 0.5rem,    // 8px 
+  lg: 0.75rem,   // 12px
+  xl: 1rem,      // 16px
+  pill: 50rem,   // Pill shape
+  circle: 50%,   // Perfect circle
+);
+
+// Shadow levels
+$shadows: (
+  sm: 0 2px 4px rgba(18, 23, 34, 0.08),
+  md: 0 4px 8px rgba(18, 23, 34, 0.12),
+  lg: 0 8px 16px rgba(18, 23, 34, 0.16),
+  xl: 0 12px 24px rgba(18, 23, 34, 0.2),
+);
+
+// Z-index layers
+$z-layers: (
+  base: 1,
+  content: 10,
+  navigation: 100,
+  overlay: 200,
+  modal: 300,
+  tooltip: 400,
+);

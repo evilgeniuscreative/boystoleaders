@@ -1,0 +1,129 @@
+
+// relationships-module.scss
+.relationships-module {
+    @include card(xl, lg, lg);
+    
+    .module-header {
+      text-align: center;
+      margin-bottom: map-get($spacing, xl);
+      
+      h1 {
+        font-family: map-get($fonts, heading);
+        font-weight: map-get($font-weights, bold);
+        font-size: map-get($font-sizes, xxxl);
+        color: map-get(map-get($colors, gray), 900);
+        margin-bottom: map-get($spacing, sm);
+      }
+      
+      .module-description {
+        font-family: map-get($fonts, body);
+        font-size: map-get($font-sizes, md);
+        color: map-get(map-get($colors, gray), 600);
+        max-width: 600px;
+        margin: 0 auto map-get($spacing, lg);
+      }
+      
+      .module-progress-bar {
+        @include progress-bar(0.5rem, secondary, gray);
+        max-width: 600px;
+        margin: 0 auto;
+        
+        .progress-text {
+          display: block;
+          text-align: right;
+          font-size: map-get($font-sizes, sm);
+          color: map-get(map-get($colors, gray), 500);
+          margin-top: map-get($spacing, xs);
+        }
+      }
+    }
+    
+    .module-tabs {
+      @include flex(row, center, center);
+      list-style: none;
+      padding: 0;
+      margin: 0 0 map-get($spacing, xl);
+      
+      li {
+        padding: map-get($spacing, sm) map-get($spacing, lg);
+        font-family: map-get($fonts, accent);
+        font-weight: map-get($font-weights, medium);
+        font-size: map-get($font-sizes, base);
+        color: map-get(map-get($colors, gray), 600);
+        cursor: pointer;
+        border-bottom: 3px solid transparent;
+        transition: all map-get($transitions, fast);
+        
+        &:hover {
+          color: map-get(map-get($colors, primary), base);
+        }
+        
+        &.react-tabs__tab--selected {
+          color: map-get(map-get($colors, primary), base);
+          border-bottom-color: map-get(map-get($colors, primary), base);
+        }
+      }
+    }
+    
+    .learning-content {
+      max-width: 800px;
+      margin: 0 auto;
+      
+      h2 {
+        font-family: map-get($fonts, heading);
+        font-weight: map-get($font-weights, semibold);
+        font-size: map-get($font-sizes, xxl);
+        color: map-get(map-get($colors, gray), 800);
+        margin-bottom: map-get($spacing, lg);
+        text-align: center;
+      }
+      
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%; // 16:9 aspect ratio
+        height: 0;
+        margin-bottom: map-get($spacing, lg);
+        
+        iframe {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          border-radius: map-get($border-radius, md);
+        }
+      }
+      
+      .key-concepts {
+        background-color: map-get(map-get($colors, gray), 100);
+        border-radius: map-get($border-radius, md);
+        padding: map-get($spacing, lg);
+        margin-bottom: map-get($spacing, xl);
+        
+        h3 {
+          font-family: map-get($fonts, heading);
+          font-weight: map-get($font-weights, semibold);
+          font-size: map-get($font-sizes, lg);
+          color: map-get(map-get($colors, gray), 800);
+          margin-bottom: map-get($spacing, md);
+        }
+        
+        ul {
+          padding-left: map-get($spacing, lg);
+          
+          li {
+            font-family: map-get($fonts, body);
+            font-size: map-get($font-sizes, base);
+            color: map-get(map-get($colors, gray), 700);
+            margin-bottom: map-get($spacing, sm);
+            line-height: 1.5;
+          }
+        }
+      }
+      
+      .next-steps {
+        text-align: center;
+      }
+    }
+  }
+  

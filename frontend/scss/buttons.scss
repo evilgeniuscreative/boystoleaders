@@ -1,0 +1,78 @@
+
+
+// buttons.scss
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: map-get($spacing, sm) map-get($spacing, lg);
+    font-family: map-get($fonts, body);
+    font-weight: map-get($font-weights, medium);
+    font-size: map-get($font-sizes, base);
+    border-radius: map-get($border-radius, md);
+    transition: all map-get($transitions, fast);
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    
+    &:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(map-get(map-get($colors, primary), base), 0.3);
+    }
+    
+    &:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
+    }
+    
+    // Button variants
+    &.btn-primary {
+      background-color: map-get(map-get($colors, primary), base);
+      color: white;
+      
+      &:hover {
+        background-color: map-get(map-get($colors, primary), dark);
+      }
+    }
+    
+    &.btn-secondary {
+      background-color: map-get(map-get($colors, secondary), base);
+      color: white;
+      
+      &:hover {
+        background-color: map-get(map-get($colors, secondary), dark);
+      }
+    }
+    
+    &.btn-outline {
+      background-color: transparent;
+      border: 2px solid map-get(map-get($colors, primary), base);
+      color: map-get(map-get($colors, primary), base);
+      
+      &:hover {
+        background-color: rgba(map-get(map-get($colors, primary), base), 0.1);
+      }
+    }
+    
+    // Button sizes
+    &.btn-lg {
+      padding: map-get($spacing, md) map-get($spacing, xl);
+      font-size: map-get($font-sizes, lg);
+    }
+    
+    &.btn-sm {
+      padding: map-get($spacing, xs) map-get($spacing, md);
+      font-size: map-get($font-sizes, sm);
+    }
+    
+    // Icon buttons
+    &.btn-icon {
+      @include flex(row, center, center);
+      gap: map-get($spacing, sm);
+      
+      svg {
+        width: 1.25em;
+        height: 1.25em;
+      }
+    }
+  }
