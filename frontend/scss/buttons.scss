@@ -1,3 +1,8 @@
+@use "sass:map";
+@use "../../app/main";
+@use "mixins";
+@use "typography";
+@use "variables";
 
 
 // buttons.scss
@@ -5,19 +10,19 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    padding: map-get($spacing, sm) map-get($spacing, lg);
-    font-family: map-get($fonts, body);
-    font-weight: map-get($font-weights, medium);
-    font-size: map-get($font-sizes, base);
-    border-radius: map-get($border-radius, md);
-    transition: all map-get($transitions, fast);
+    padding: map.get(main.$spacing, sm) map.get(main.$spacing, lg);
+    font-family: map.get(typography.$fonts, body);
+    font-weight: map.get(typography.$font-weights, medium);
+    font-size: map.get(typography.$font-sizes, base);
+    border-radius: map.get(main.$border-radius, md);
+    transition: all map.get(main.$transitions, fast);
     border: none;
     cursor: pointer;
     text-decoration: none;
     
     &:focus {
       outline: none;
-      box-shadow: 0 0 0 3px rgba(map-get(map-get($colors, primary), base), 0.3);
+      box-shadow: 0 0 0 3px rgba(map.get(map.get(variables.$colors, primary), base), 0.3);
     }
     
     &:disabled {
@@ -27,48 +32,48 @@
     
     // Button variants
     &.btn-primary {
-      background-color: map-get(map-get($colors, primary), base);
+      background-color: map.get(map.get(variables.$colors, primary), base);
       color: white;
       
       &:hover {
-        background-color: map-get(map-get($colors, primary), dark);
+        background-color: map.get(map.get(variables.$colors, primary), dark);
       }
     }
     
     &.btn-secondary {
-      background-color: map-get(map-get($colors, secondary), base);
+      background-color: map.get(map.get(variables.$colors, secondary), base);
       color: white;
       
       &:hover {
-        background-color: map-get(map-get($colors, secondary), dark);
+        background-color: map.get(map.get(variables.$colors, secondary), dark);
       }
     }
     
     &.btn-outline {
       background-color: transparent;
-      border: 2px solid map-get(map-get($colors, primary), base);
-      color: map-get(map-get($colors, primary), base);
+      border: 2px solid map.get(map.get(variables.$colors, primary), base);
+      color: map.get(map.get(variables.$colors, primary), base);
       
       &:hover {
-        background-color: rgba(map-get(map-get($colors, primary), base), 0.1);
+        background-color: rgba(map.get(map.get(variables.$colors, primary), base), 0.1);
       }
     }
     
     // Button sizes
     &.btn-lg {
-      padding: map-get($spacing, md) map-get($spacing, xl);
-      font-size: map-get($font-sizes, lg);
+      padding: map.get(main.$spacing, md) map.get(main.$spacing, xl);
+      font-size: map.get(typography.$font-sizes, lg);
     }
     
     &.btn-sm {
-      padding: map-get($spacing, xs) map-get($spacing, md);
-      font-size: map-get($font-sizes, sm);
+      padding: map.get(main.$spacing, xs) map.get(main.$spacing, md);
+      font-size: map.get(typography.$font-sizes, sm);
     }
     
     // Icon buttons
     &.btn-icon {
-      @include flex(row, center, center);
-      gap: map-get($spacing, sm);
+      @include mixins.flex(row, center, center);
+      gap: map.get(main.$spacing, sm);
       
       svg {
         width: 1.25em;

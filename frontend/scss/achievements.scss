@@ -1,56 +1,62 @@
+@use "sass:map";
+@use "../../app/main";
+@use "mixins";
+@use "typography";
+@use "variables";
+
 
 // achievements.scss
 .achievements-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    gap: map-get($spacing, md);
-    margin-top: map-get($spacing, lg);
+    gap: map.get(main.$spacing, md);
+    margin-top: map.get(main.$spacing, lg);
     
     .achievement-card {
-      @include flex(column, center, center);
-      padding: map-get($spacing, md);
-      border-radius: map-get($border-radius, md);
+      @include mixins.flex(column, center, center);
+      padding: map.get(main.$spacing, md);
+      border-radius: map.get(main.$border-radius, md);
       background-color: white;
-      box-shadow: map-get($shadows, sm);
-      transition: all map-get($transitions, base);
+      box-shadow: map.get(main.$shadows, sm);
+      transition: all map.get(main.$transitions, base);
       text-align: center;
       cursor: pointer;
       
       &:hover {
         transform: translateY(-4px);
-        box-shadow: map-get($shadows, md);
+        box-shadow: map.get(main.$shadows, md);
       }
       
       .achievement-icon {
-        @include achievement-badge(4rem, primary);
-        margin-bottom: map-get($spacing, sm);
+        @include mixins.achievement-badge(4rem, primary);
+        margin-bottom: map.get(main.$spacing, sm);
       }
       
       &.locked {
         .achievement-icon {
           background: radial-gradient(circle, 
-            map-get(map-get($colors, gray), 300) 0%, 
-            map-get(map-get($colors, gray), 400) 100%);
+            map.get(map.get(variables.$colors, gray), 300) 0%, 
+            map.get(map.get(variables.$colors, gray), 400) 100%);
           opacity: 0.5;
         }
         
         h3 {
-          color: map-get(map-get($colors, gray), 500);
+          color: map.get(map.get(variables.$colors, gray), 500);
         }
       }
       
       h3 {
-        font-family: map-get($fonts, heading);
-        font-weight: map-get($font-weights, medium);
-        font-size: map-get($font-sizes, sm);
-        color: map-get(map-get($colors, gray), 800);
-        margin-bottom: map-get($spacing, xs);
+        font-family: map.get(typography.$fonts, heading);
+        font-weight: map.get(typography.$font-weights, medium);
+        font-size: map.get(typography.$font-sizes, sm);
+        color: map.get(map.get(variables.$colors, gray), 800);
+        margin-bottom: map.get(main.$spacing, xs);
       }
       
       .achievement-date {
-        font-family: map-get($fonts, body);
-        font-size: map-get($font-sizes, xs);
-        color: map-get(map-get($colors, gray), 500);
+        font-family: map.get(typography.$fonts, body);
+        font-size: map.get(typography.$font-sizes, xs);
+        color: map.get(map.get(variables.$colors, gray), 500);
       }
     }
   }

@@ -1,0 +1,576 @@
+/* Import variables and mixins first */
+@use "../frontend/scss/_variables.scss";
+@use "../frontend/scss/_mixins.scss";
+
+/* Define all variables directly in main.scss to avoid circular dependencies */
+
+/* Colors */
+$colors: (
+  primary: (
+    light: #4a90e2,
+    base: #2563eb,
+    dark: #1d4ed8
+  ),
+  secondary: (
+    light: #6b7280,
+    base: #4b5563,
+    dark: #374151
+  ),
+  accent: (
+    purple: #8b5cf6,
+    teal: #14b8a6,
+    orange: #f97316
+  ),
+  gray: (
+    100: #f3f4f6,
+    200: #e5e7eb,
+    300: #d1d5db,
+    400: #9ca3af,
+    500: #6b7280,
+    600: #4b5563,
+    700: #374151,
+    800: #1f2937,
+    900: #111827
+  ),
+  feedback: (
+    success: #2bb67b,
+    warning: #ffc555,
+    error: #e94444,
+    info: #3b93f7
+  )
+);
+
+/* Spacing */
+$spacing: (
+  xs: 0.25rem,   // 4px
+  sm: 0.5rem,    // 8px
+  md: 1rem,      // 16px
+  lg: 1.5rem,    // 24px
+  xl: 2rem,      // 32px
+  xxl: 3rem      // 48px
+);
+
+/* Typography */
+$fonts: (
+  heading: ('Poppins', sans-serif),
+  body: ('Inter', sans-serif),
+  accent: ('Roboto', sans-serif)
+);
+
+$font-weights: (
+  light: 300,
+  regular: 400,
+  medium: 500,
+  semibold: 600,
+  bold: 700
+);
+
+$font-sizes: (
+  xs: 0.75rem,    // 12px
+  sm: 0.875rem,   // 14px
+  base: 1rem,     // 16px
+  md: 1.125rem,   // 18px
+  lg: 1.25rem,    // 20px
+  xl: 1.5rem,     // 24px
+  xxl: 2rem,      // 32px
+  xxxl: 2.5rem    // 40px
+);
+
+/* UI Elements */
+$border-radius: (
+  sm: 4px,
+  md: 8px,
+  lg: 12px,
+  xl: 16px,
+  pill: 9999px,
+  circle: 50%
+);
+
+$transitions: (
+  fast: 0.2s ease,
+  medium: 0.3s ease,
+  slow: 0.5s ease,
+  base: 0.3s ease
+);
+
+$shadows: (
+  sm: 0 1px 3px rgba(0, 0, 0, 0.1),
+  md: 0 4px 6px rgba(0, 0, 0, 0.1),
+  lg: 0 10px 15px rgba(0, 0, 0, 0.1)
+);
+
+$breakpoints: (
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px
+);
+
+/* Animation keyframes */
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+/* Animation utility classes */
+.animate-pulse {
+  animation: pulse 2s infinite;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out forwards;
+}
+
+/* Mixins */
+@mixin flex($direction: row, $justify: flex-start, $align: stretch) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  } @else {
+    @warn "Unknown breakpoint: #{$breakpoint}";
+  }
+}
+
+@mixin card($padding: md, $radius: md, $shadow: md) {
+  padding: map-get($spacing, $padding);
+  border-radius: map-get($border-radius, $radius);
+  box-shadow: map-get($shadows, $shadow);
+  background-color: white;
+}
+
+@mixin achievement-badge($size: 3rem, $color: primary) {
+  width: $size;
+  height: $size;
+  border-radius: map-get($border-radius, circle);
+  background: radial-gradient(circle, 
+    lighten(map-get(map-get($colors, $color), base), 20%) 0%, 
+    map-get(map-get($colors, $color), base) 100%);
+  @include flex(row, center, center);
+  box-shadow: map-get($shadows, md);
+  transition: transform map-get($transitions, fast);
+  
+  &:hover {
+    transform: scale(1.05);
+  }
+}
+
+@mixin progress-bar($height: 0.75rem, $color: primary, $background: gray) {
+  height: $height;
+  border-radius: map-get($border-radius, pill);
+  background-color: map-get(map-get($colors, $background), 200);
+  overflow: hidden;
+  
+  .progress-fill {
+    height: 100%;
+    width: 0;
+    background-color: map-get(map-get($colors, $color), base);
+    border-radius: map-get($border-radius, pill);
+    transition: width map-get($transitions, base);
+  }
+}
+
+/* Basic reset and global styles */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+  font-family: map-get($fonts, body);
+  color: map-get(map-get($colors, gray), 800);
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: map-get($fonts, heading);
+  font-weight: map-get($font-weights, semibold);
+  margin-bottom: map-get($spacing, md);
+}
+
+a {
+  color: map-get(map-get($colors, primary), base);
+  text-decoration: none;
+  
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+/* Component styles */
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: map-get($spacing, sm) map-get($spacing, lg);
+  font-family: map-get($fonts, body);
+  font-weight: map-get($font-weights, medium);
+  font-size: map-get($font-sizes, base);
+  border-radius: map-get($border-radius, md);
+  transition: all map-get($transitions, fast);
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(map-get(map-get($colors, primary), base), 0.3);
+  }
+  
+  &:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+  }
+  
+  &.btn-primary {
+    background-color: map-get(map-get($colors, primary), base);
+    color: white;
+    
+    &:hover {
+      background-color: map-get(map-get($colors, primary), dark);
+    }
+  }
+  
+  &.btn-secondary {
+    background-color: map-get(map-get($colors, secondary), base);
+    color: white;
+    
+    &:hover {
+      background-color: map-get(map-get($colors, secondary), dark);
+    }
+  }
+  
+  &.btn-outline {
+    background-color: transparent;
+    border: 2px solid map-get(map-get($colors, primary), base);
+    color: map-get(map-get($colors, primary), base);
+    
+    &:hover {
+      background-color: rgba(map-get(map-get($colors, primary), base), 0.1);
+    }
+  }
+  
+  &.btn-lg {
+    padding: map-get($spacing, md) map-get($spacing, xl);
+    font-size: map-get($font-sizes, lg);
+  }
+  
+  &.btn-sm {
+    padding: map-get($spacing, xs) map-get($spacing, md);
+    font-size: map-get($font-sizes, sm);
+  }
+  
+  &.btn-icon {
+    @include flex(row, center, center);
+    gap: map-get($spacing, sm);
+  }
+}
+
+/* Cards */
+.card {
+  @include card(md, md, md);
+  transition: transform map-get($transitions, base);
+  
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: map-get($shadows, lg);
+  }
+  
+  .card-header {
+    margin-bottom: map-get($spacing, md);
+    
+    h3 {
+      font-family: map-get($fonts, heading);
+      font-weight: map-get($font-weights, semibold);
+      color: map-get(map-get($colors, gray), 800);
+      margin-bottom: map-get($spacing, xs);
+    }
+  }
+  
+  .card-content {
+    margin-bottom: map-get($spacing, md);
+  }
+  
+  .card-footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  
+  &.skill-card {
+    border-left: 4px solid map-get(map-get($colors, accent), purple);
+  }
+  
+  &.achievement-card {
+    border-left: 4px solid map-get(map-get($colors, accent), orange);
+  }
+  
+  &.mentorship-card {
+    border-left: 4px solid map-get(map-get($colors, accent), teal);
+  }
+}
+
+/* Dashboard */
+.dashboard-container {
+  @include flex(column, flex-start, stretch);
+  gap: map-get($spacing, xl);
+  padding: map-get($spacing, lg);
+  
+  @include respond-to(md) {
+    padding: map-get($spacing, xl);
+  }
+  
+  .dashboard-welcome {
+    @include flex(column, center, flex-start);
+    
+    h1 {
+      font-family: map-get($fonts, heading);
+      font-weight: map-get($font-weights, bold);
+      font-size: map-get($font-sizes, xxl);
+      color: map-get(map-get($colors, gray), 900);
+      margin-bottom: map-get($spacing, xs);
+    }
+    
+    .level-indicator {
+      font-family: map-get($fonts, accent);
+      font-weight: map-get($font-weights, medium);
+      color: map-get(map-get($colors, primary), base);
+      font-size: map-get($font-sizes, md);
+      padding: map-get($spacing, xs) map-get($spacing, md);
+      background-color: rgba(map-get(map-get($colors, primary), base), 0.1);
+      border-radius: map-get($border-radius, pill);
+    }
+  }
+  
+  .dashboard-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: map-get($spacing, lg);
+    
+    @include respond-to(lg) {
+      grid-template-columns: 3fr 1fr;
+    }
+  }
+  
+  .dashboard-section {
+    margin-bottom: map-get($spacing, xl);
+    
+    h2 {
+      font-size: map-get($font-sizes, xl);
+      margin-bottom: map-get($spacing, lg);
+      color: map-get(map-get($colors, gray), 800);
+    }
+  }
+}
+
+/* Progress Tracker */
+.progress-tracker {
+  @include flex(column, flex-start, stretch);
+  gap: map-get($spacing, md);
+  
+  .progress-item {
+    .progress-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: map-get($spacing, xs);
+      
+      h3 {
+        font-size: map-get($font-sizes, md);
+        margin-bottom: 0;
+      }
+      
+      .progress-percentage {
+        font-weight: map-get($font-weights, bold);
+        color: map-get(map-get($colors, primary), base);
+      }
+    }
+    
+    .progress-bar {
+      @include progress-bar(0.5rem, primary, gray);
+    }
+  }
+}
+
+/* Achievements */
+.achievements-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: map-get($spacing, md);
+  margin-top: map-get($spacing, lg);
+  
+  .achievement-card {
+    @include flex(column, center, center);
+    padding: map-get($spacing, md);
+    border-radius: map-get($border-radius, md);
+    background-color: white;
+    box-shadow: map-get($shadows, sm);
+    transition: all map-get($transitions, base);
+    text-align: center;
+    cursor: pointer;
+    
+    &:hover {
+      transform: translateY(-4px);
+      box-shadow: map-get($shadows, md);
+    }
+    
+    .achievement-icon {
+      @include achievement-badge(4rem, primary);
+      margin-bottom: map-get($spacing, sm);
+    }
+    
+    &.locked {
+      .achievement-icon {
+        background: radial-gradient(circle, 
+          map-get(map-get($colors, gray), 300) 0%, 
+          map-get(map-get($colors, gray), 400) 100%);
+        opacity: 0.5;
+      }
+      
+      .achievement-title, 
+      .achievement-date {
+        color: map-get(map-get($colors, gray), 500);
+      }
+    }
+    
+    .achievement-title {
+      font-family: map-get($fonts, heading);
+      font-weight: map-get($font-weights, medium);
+      font-size: map-get($font-sizes, sm);
+      color: map-get(map-get($colors, gray), 800);
+      margin-bottom: map-get($spacing, xs);
+    }
+    
+    .achievement-date {
+      font-family: map-get($fonts, body);
+      font-size: map-get($font-sizes, xs);
+      color: map-get(map-get($colors, gray), 500);
+    }
+  }
+}
+
+/* Navigation */
+.main-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: map-get($spacing, md) map-get($spacing, xl);
+  background-color: white;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  
+  .nav-logo {
+    .logo-text {
+      font-family: map-get($fonts, heading);
+      font-weight: map-get($font-weights, bold);
+      font-size: map-get($font-sizes, lg);
+      color: map-get(map-get($colors, primary), base);
+    }
+  }
+  
+  .nav-links {
+    display: flex;
+    list-style: none;
+    gap: map-get($spacing, lg);
+    margin: 0;
+    padding: 0;
+    
+    li {
+      a {
+        font-family: map-get($fonts, body);
+        font-weight: map-get($font-weights, medium);
+        color: map-get(map-get($colors, gray), 700);
+        text-decoration: none;
+        padding: map-get($spacing, xs) map-get($spacing, sm);
+        border-radius: map-get($border-radius, sm);
+        transition: all map-get($transitions, fast);
+        
+        &:hover {
+          color: map-get(map-get($colors, primary), base);
+          background-color: rgba(map-get(map-get($colors, primary), base), 0.05);
+        }
+      }
+      
+      &.active a {
+        color: map-get(map-get($colors, primary), base);
+        font-weight: map-get($font-weights, semibold);
+      }
+    }
+  }
+}
+
+@media (max-width: map-get($breakpoints, md)) {
+  .main-navigation {
+    flex-direction: column;
+    padding: map-get($spacing, sm);
+    
+    .nav-logo, .nav-links, .nav-actions {
+      margin-bottom: map-get($spacing, sm);
+    }
+    
+    .nav-links {
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: map-get($spacing, md);
+    }
+  }
+}
+
+/* App Container */
+.app-container {
+  padding: map-get($spacing, lg);
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: calc(100vh - 80px); /* Account for navigation height */
+}
+
+@media (max-width: map-get($breakpoints, md)) {
+  .app-container {
+    padding: map-get($spacing, md);
+  }
+}

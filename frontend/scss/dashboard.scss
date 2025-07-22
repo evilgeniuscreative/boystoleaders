@@ -1,42 +1,48 @@
+@use "sass:map";
+@use "../../app/main";
+@use "mixins";
+@use "typography";
+@use "variables";
+
 
 // dashboard.scss
 .dashboard-container {
-    @include flex(column, flex-start, stretch);
-    gap: map-get($spacing, xl);
-    padding: map-get($spacing, lg);
+    @include mixins.flex(column, flex-start, stretch);
+    gap: map.get(main.$spacing, xl);
+    padding: map.get(main.$spacing, lg);
     
-    @include respond-to(md) {
-      padding: map-get($spacing, xl);
+    @include mixins.respond-to(md) {
+      padding: map.get(main.$spacing, xl);
     }
     
     .dashboard-welcome {
-      @include flex(column, center, flex-start);
+      @include mixins.flex(column, center, flex-start);
       
       h1 {
-        font-family: map-get($fonts, heading);
-        font-weight: map-get($font-weights, bold);
-        font-size: map-get($font-sizes, xxl);
-        color: map-get(map-get($colors, gray), 900);
-        margin-bottom: map-get($spacing, xs);
+        font-family: map.get(typography.$fonts, heading);
+        font-weight: map.get(typography.$font-weights, bold);
+        font-size: map.get(typography.$font-sizes, xxl);
+        color: map.get(map.get(variables.$colors, gray), 900);
+        margin-bottom: map.get(main.$spacing, xs);
       }
       
       .level-indicator {
-        font-family: map-get($fonts, accent);
-        font-weight: map-get($font-weights, medium);
-        color: map-get(map-get($colors, primary), base);
-        font-size: map-get($font-sizes, md);
-        padding: map-get($spacing, xs) map-get($spacing, md);
-        background-color: rgba(map-get(map-get($colors, primary), base), 0.1);
-        border-radius: map-get($border-radius, pill);
+        font-family: map.get(typography.$fonts, accent);
+        font-weight: map.get(typography.$font-weights, medium);
+        color: map.get(map.get(variables.$colors, primary), base);
+        font-size: map.get(typography.$font-sizes, md);
+        padding: map.get(main.$spacing, xs) map.get(main.$spacing, md);
+        background-color: rgba(map.get(map.get(variables.$colors, primary), base), 0.1);
+        border-radius: map.get(main.$border-radius, pill);
       }
     }
     
     .dashboard-grid {
       display: grid;
       grid-template-columns: 1fr;
-      gap: map-get($spacing, lg);
+      gap: map.get(main.$spacing, lg);
       
-      @include respond-to(lg) {
+      @include mixins.respond-to(lg) {
         grid-template-columns: 3fr 1fr;
       }
     }

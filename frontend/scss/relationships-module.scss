@@ -1,66 +1,72 @@
+@use "sass:map";
+@use "../../app/main";
+@use "mixins";
+@use "typography";
+@use "variables";
+
 
 // relationships-module.scss
 .relationships-module {
-    @include card(xl, lg, lg);
+    @include mixins.card(xl, lg, lg);
     
     .module-header {
       text-align: center;
-      margin-bottom: map-get($spacing, xl);
+      margin-bottom: map.get(main.$spacing, xl);
       
       h1 {
-        font-family: map-get($fonts, heading);
-        font-weight: map-get($font-weights, bold);
-        font-size: map-get($font-sizes, xxxl);
-        color: map-get(map-get($colors, gray), 900);
-        margin-bottom: map-get($spacing, sm);
+        font-family: map.get(typography.$fonts, heading);
+        font-weight: map.get(typography.$font-weights, bold);
+        font-size: map.get(typography.$font-sizes, xxxl);
+        color: map.get(map.get(variables.$colors, gray), 900);
+        margin-bottom: map.get(main.$spacing, sm);
       }
       
       .module-description {
-        font-family: map-get($fonts, body);
-        font-size: map-get($font-sizes, md);
-        color: map-get(map-get($colors, gray), 600);
+        font-family: map.get(typography.$fonts, body);
+        font-size: map.get(typography.$font-sizes, md);
+        color: map.get(map.get(variables.$colors, gray), 600);
         max-width: 600px;
-        margin: 0 auto map-get($spacing, lg);
+        margin: 0 auto map.get(main.$spacing, lg);
       }
       
       .module-progress-bar {
-        @include progress-bar(0.5rem, secondary, gray);
+        @include mixins.progress-bar(0.5rem, secondary, gray);
         max-width: 600px;
         margin: 0 auto;
         
         .progress-text {
           display: block;
           text-align: right;
-          font-size: map-get($font-sizes, sm);
-          color: map-get(map-get($colors, gray), 500);
-          margin-top: map-get($spacing, xs);
+          font-size: map.get(typography.$font-sizes, sm);
+          color: map.get(map.get(variables.$colors, gray), 500);
+          margin-top: map.get(main.$spacing, xs);
         }
       }
     }
     
     .module-tabs {
-      @include flex(row, center, center);
+      @include mixins.flex(row, center, center);
       list-style: none;
       padding: 0;
-      margin: 0 0 map-get($spacing, xl);
+      margin: 0 0 map.get(main.$spacing, xl);
       
       li {
-        padding: map-get($spacing, sm) map-get($spacing, lg);
-        font-family: map-get($fonts, accent);
-        font-weight: map-get($font-weights, medium);
-        font-size: map-get($font-sizes, base);
-        color: map-get(map-get($colors, gray), 600);
+        padding: map.get(main.$spacing, sm) map.get(main.$spacing, lg);
+        font-family: map.get(typography.$fonts, accent);
+        font-weight: map.get(typography.$font-weights, medium);
+        font-size: map.get(typography.$font-sizes, base);
+        color: map.get(map.get(variables.$colors, gray), 600);
         cursor: pointer;
         border-bottom: 3px solid transparent;
-        transition: all map-get($transitions, fast);
+        transition: all map.get(main.$transitions, fast);
         
         &:hover {
-          color: map-get(map-get($colors, primary), base);
+          color: map.get(map.get(variables.$colors, primary), base);
         }
         
         &.react-tabs__tab--selected {
-          color: map-get(map-get($colors, primary), base);
-          border-bottom-color: map-get(map-get($colors, primary), base);
+          color: map.get(map.get(variables.$colors, primary), base);
+          border-bottom-color: map.get(map.get(variables.$colors, primary), base);
         }
       }
     }
@@ -70,11 +76,11 @@
       margin: 0 auto;
       
       h2 {
-        font-family: map-get($fonts, heading);
-        font-weight: map-get($font-weights, semibold);
-        font-size: map-get($font-sizes, xxl);
-        color: map-get(map-get($colors, gray), 800);
-        margin-bottom: map-get($spacing, lg);
+        font-family: map.get(typography.$fonts, heading);
+        font-weight: map.get(typography.$font-weights, semibold);
+        font-size: map.get(typography.$font-sizes, xxl);
+        color: map.get(map.get(variables.$colors, gray), 800);
+        margin-bottom: map.get(main.$spacing, lg);
         text-align: center;
       }
       
@@ -82,7 +88,7 @@
         position: relative;
         padding-bottom: 56.25%; // 16:9 aspect ratio
         height: 0;
-        margin-bottom: map-get($spacing, lg);
+        margin-bottom: map.get(main.$spacing, lg);
         
         iframe {
           position: absolute;
@@ -90,32 +96,32 @@
           left: 0;
           width: 100%;
           height: 100%;
-          border-radius: map-get($border-radius, md);
+          border-radius: map.get(main.$border-radius, md);
         }
       }
       
       .key-concepts {
-        background-color: map-get(map-get($colors, gray), 100);
-        border-radius: map-get($border-radius, md);
-        padding: map-get($spacing, lg);
-        margin-bottom: map-get($spacing, xl);
+        background-color: map.get(map.get(variables.$colors, gray), 100);
+        border-radius: map.get(main.$border-radius, md);
+        padding: map.get(main.$spacing, lg);
+        margin-bottom: map.get(main.$spacing, xl);
         
         h3 {
-          font-family: map-get($fonts, heading);
-          font-weight: map-get($font-weights, semibold);
-          font-size: map-get($font-sizes, lg);
-          color: map-get(map-get($colors, gray), 800);
-          margin-bottom: map-get($spacing, md);
+          font-family: map.get(typography.$fonts, heading);
+          font-weight: map.get(typography.$font-weights, semibold);
+          font-size: map.get(typography.$font-sizes, lg);
+          color: map.get(map.get(variables.$colors, gray), 800);
+          margin-bottom: map.get(main.$spacing, md);
         }
         
         ul {
-          padding-left: map-get($spacing, lg);
+          padding-left: map.get(main.$spacing, lg);
           
           li {
-            font-family: map-get($fonts, body);
-            font-size: map-get($font-sizes, base);
-            color: map-get(map-get($colors, gray), 700);
-            margin-bottom: map-get($spacing, sm);
+            font-family: map.get(typography.$fonts, body);
+            font-size: map.get(typography.$font-sizes, base);
+            color: map.get(map.get(variables.$colors, gray), 700);
+            margin-bottom: map.get(main.$spacing, sm);
             line-height: 1.5;
           }
         }

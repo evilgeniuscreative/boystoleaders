@@ -1,35 +1,41 @@
+@use "sass:map";
+@use "../../app/main";
+@use "mixins";
+@use "typography";
+@use "variables";
+
 
 // cards.scss
 .card {
-    @include card(md, md, md);
-    transition: transform map-get($transitions, base);
+    @include mixins.card(md, md, md);
+    transition: transform map.get(main.$transitions, base);
     
     &:hover {
       transform: translateY(-4px);
-      box-shadow: map-get($shadows, lg);
+      box-shadow: map.get(main.$shadows, lg);
     }
     
     .card-header {
-      margin-bottom: map-get($spacing, md);
+      margin-bottom: map.get(main.$spacing, md);
       
       h3 {
-        font-family: map-get($fonts, heading);
-        font-weight: map-get($font-weights, semibold);
-        color: map-get(map-get($colors, gray), 800);
-        margin-bottom: map-get($spacing, xs);
+        font-family: map.get(typography.$fonts, heading);
+        font-weight: map.get(typography.$font-weights, semibold);
+        color: map.get(map.get(variables.$colors, gray), 800);
+        margin-bottom: map.get(main.$spacing, xs);
       }
     }
     
     &.challenge-card {
-      border-left: 4px solid map-get(map-get($colors, accent), purple);
+      border-left: 4px solid map.get(map.get(variables.$colors, accent), purple);
     }
     
     &.achievement-card {
-      border-left: 4px solid map-get(map-get($colors, accent), orange);
+      border-left: 4px solid map.get(map.get(variables.$colors, accent), orange);
     }
     
     &.mentorship-card {
-      border-left: 4px solid map-get(map-get($colors, accent), teal);
+      border-left: 4px solid map.get(map.get(variables.$colors, accent), teal);
     }
   }
   
